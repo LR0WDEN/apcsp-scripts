@@ -1,20 +1,17 @@
 #!/bin/bash
 # fileinfo.sh
 
-FILES="dl01 dl02 dl03 dl04 dl05 dl06 dl07 dl08 dl09 dl10"
+DROPLETS="dl01 dl02 dl03 dl04 dl05 dl06 dl07 dl08 dl09 dl10"
 
 echo
 
-for file in $FILES ;
-do
-	echo $file
-	ping -c 1 $file
+for droplet in $DROPLETS ; do
+	echo $droplet
+	ping -c 1 $droplet
 	if [ $? -eq "0" ]; then
-		echo "alive"; echo
+		echo "$droplet is alive";
+	else
+			echo "$droplet is dead"; echo
 	fi
-		continue
-		if [ echo $? -eq "1" ]; then
-			echo "dead"; echo
-		fi
 done
 exit 0
