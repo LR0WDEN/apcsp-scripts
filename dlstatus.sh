@@ -7,7 +7,7 @@ echo
 
 for droplet in $DROPLETS ; do
 	echo $droplet
-	ping -c 1 $droplet
+	ping -c 1 $droplet > fileC
 	if [ $? -eq "0" ]; then
 		echo "$droplet is alive";
 	else
